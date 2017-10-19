@@ -1,8 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { QRCode } from './app/components';
 
 export default class App extends React.Component {
+  go() {
+    alert('oi');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -10,6 +14,8 @@ export default class App extends React.Component {
         <Text>Changes you make will automatically reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
         <QRCode></QRCode>
+
+        <Button onPress={this.go} title="Go">Go</Button>
       </View>
     );
   }
