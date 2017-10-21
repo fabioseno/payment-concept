@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableHighlight } from 'react-native';
 
 export class Home extends React.Component {
     static navigationOptions = {
@@ -7,9 +7,14 @@ export class Home extends React.Component {
     };
 
     render() {
+        const { navigate } = this.props.navigation;
+
         return (
             <View>
                 <Text>welcome</Text>
+                <TouchableHighlight onPress={() => navigate('NewPayment')}>
+                    <Text>Pay now</Text>
+                </TouchableHighlight>
             </View>
         );
     }
