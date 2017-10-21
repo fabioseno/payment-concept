@@ -1,23 +1,35 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import { QRCode } from './app/components';
+import { Home } from './app/screens/home';
+
+const SimpleApp = StackNavigator({
+  Home: { screen: Home }
+});
 
 export default class App extends React.Component {
-  go() {
-    alert('oi');
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <QRCode></QRCode>
+    //const { navigate } = this.props.navigation;
 
-        <Button onPress={this.go} title="Go">Go</Button>
-      </View>
+    return(
+      <SimpleApp />
     );
+      // <View style={styles.container}>
+      //   <Text>Open up App.js to start working on your app!</Text>
+      //   <Text>Changes you make will automatically reload.</Text>
+      //   <Text>Shake your phone to open the developer menu.</Text>
+      //   <QRCode></QRCode>
+
+      //   <Button onPress={ () => navigate('Home') } title="Go">Go</Button>
+      // </View>
+
+      
+    
   }
 }
 
