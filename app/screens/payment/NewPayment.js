@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 export class NewPayment extends React.Component {
     static navigationOptions = {
@@ -12,7 +12,16 @@ export class NewPayment extends React.Component {
                 <Text>
                     QR Code reader
                 </Text>
+                <View style={styles.scan}></View>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    scan: {
+        backgroundColor: 'blue',
+        width: 100,
+        height: 100
+    }
+});

@@ -12,7 +12,7 @@ export class Home extends React.Component {
         return (
             <View>
                 <Text>welcome</Text>
-                <TouchableHighlight onPress={() => navigate('NewPayment')}>
+                <TouchableHighlight onPress={() => navigate('CreditCards')}>
                     <Text>Pay now</Text>
                 </TouchableHighlight>
             </View>
