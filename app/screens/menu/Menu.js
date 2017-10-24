@@ -18,14 +18,14 @@ export class Menu extends React.Component {
                 <View style={ styles.menu }>
                     {/* <View style={{ flex:1, backgroundColor: '#0000ff' }}> */}
                         <View style={styles.menuRow}>
-                            <MenuItem name="Wallet"></MenuItem>
-                            <MenuItem name="Quick pay"></MenuItem>
-                            <MenuItem name="Lançamento"></MenuItem>
+                            <MenuItem name="Wallet" style={'topLeftItem'}></MenuItem>
+                            <MenuItem name="Quick pay" style={'topMiddleItem'}></MenuItem>
+                            <MenuItem name="Lançamento" style={'topRightItem'}></MenuItem>
                         </View>
                         <View style={styles.menuRow}>
-                            <MenuItem name="Cobranças"></MenuItem>
-                            <MenuItem name="Settings"></MenuItem>
-                            <MenuItem name="Settings"></MenuItem>
+                            <MenuItem name="Cobranças" style={'bottomLeftItem'}></MenuItem>
+                            <MenuItem name="Settings" style={'bottomMiddleItem'}></MenuItem>
+                            <MenuItem name="Settings" style={'bottomRightItem'}></MenuItem>
                         </View>
                     {/* </View> */}
                 </View>
