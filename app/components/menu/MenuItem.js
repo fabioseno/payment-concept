@@ -1,15 +1,25 @@
 import React from 'react';
 import {
     StyleSheet,
+    View,
     Text,
+    Image,
     TouchableHighlight
 } from 'react-native';
+
+import { AppText } from '../index';
+
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+const myIcon = (<Icon name="credit-card" size={30} color="#900" />)
 
 export class MenuItem extends React.Component {
     render() {
         return (
             <TouchableHighlight style={[styles.menuItem, styles[this.props.style]]}>
-                <Text style={styles.menuItemText}>{ this.props.name }</Text>
+                <View style={styles.menuContainer}>
+                    <Icon style={styles.icon} name={this.props.icon} size={30} color="#900" />
+                    <AppText style={styles.menuItemText}>{this.props.name}</AppText>
+                </View>
             </TouchableHighlight>
         );
     }
@@ -17,47 +27,48 @@ export class MenuItem extends React.Component {
 
 const styles = StyleSheet.create({
     menuItem: {
-        //borderRadius: 10,
-        borderWidth: 0,
-        //borderColor: '#f7f7f7',
+        //borderWidth: 0,
+        //borderColor: '#eaeaea',
+
         backgroundColor: '#295185',
         flex: 1,
         height: 130,
-        padding: 10,
+        padding: 10
+    },
+    menuContainer: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-
-        // shadowColor: '#6b8db9',
-        // shadowOffset: {
-        //     width: 0,
-        //     height: 0
-        // },
-        // shadowRadius: 0,
-        // shadowOpacity: 0.6
+    },
+    icon: {
+        color: '#ffffff',
+        fontSize: 36
     },
     menuItemText: {
+        marginTop: 8,
         color: '#ffffff',
-        fontSize: 12
+        fontSize: 13
     },
     topLeftItem: {
-        borderRightWidth: 1
+        marginRight: 1
     },
     topMiddleItem: {
-        //borderBottomWidth: 1
+        
     },
     topRightItem: {
-        borderLeftWidth: 1
+        marginLeft: 1
     },
     bottomLeftItem: {
-        borderTopWidth: 1,
-        borderRightWidth: 1
+        borderRightWidth: 1,
+        marginTop: 1,
+        marginRight: 1
     },
     bottomMiddleItem: {
-        borderTopWidth: 1,
-        borderBottomWidth: 1
+        marginTop: 1,
     },
     bottomRightItem: {
         borderTopWidth: 1,
-        borderLeftWidth: 1
+        marginTop: 1,
+        marginLeft: 1
     },
 });
