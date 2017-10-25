@@ -11,7 +11,7 @@ export class AppText extends React.Component {
 
 const styles = StyleSheet.create({
     text: {
-        fontFamily: 'HelveticaNeue-Medium',
-        fontStyle: 'italic'
+        fontFamily: 'Helvetica Neue',
+        // fontStyle: 'italic'
     }
 });

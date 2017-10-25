@@ -27,8 +27,8 @@ export class MenuItem extends React.Component {
 
 const styles = StyleSheet.create({
     menuItem: {
-        //borderWidth: 0,
-        //borderColor: '#eaeaea',
+        borderWidth: 0,
+        borderColor: '#eaeaea',
 
         backgroundColor: '#295185',
         flex: 1,
@@ -50,25 +50,23 @@ const styles = StyleSheet.create({
         fontSize: 13
     },
     topLeftItem: {
-        marginRight: 1
+        borderRightWidth: 1
     },
     topMiddleItem: {
         
     },
     topRightItem: {
-        marginLeft: 1
+        borderLeftWidth: 1
     },
     bottomLeftItem: {
-        borderRightWidth: 1,
-        marginTop: 1,
-        marginRight: 1
+        borderTopWidth: 1,
+        borderRightWidth: 1
     },
     bottomMiddleItem: {
-        marginTop: 1,
+        borderTopWidth: 1
     },
     bottomRightItem: {
         borderTopWidth: 1,
-        marginTop: 1,
-        marginLeft: 1
+        borderLeftWidth: 1
     },
 });

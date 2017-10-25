@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
-import { MenuItem } from '../../../app/components/menu/MenuItem';
 import { StackNavigator } from 'react-navigation';
 
-
+import { MenuItem } from '../../../app/components/menu/MenuItem';
+import { AppText } from '../../components';
 
 export class Menu extends React.Component {
     static navigationOptions = {
@@ -15,13 +15,13 @@ export class Menu extends React.Component {
             <View style={styles.mainView}>
                 <View style={styles.logoContainer}>
                     <Image style={styles.logo} resizeMode="contain" source={require('../../assets/img/aix-logo.png')}></Image>
-                    <Text style={styles.logoName}>AixMobil</Text>
+                    <AppText style={styles.logoName}>AixMobil</AppText>
                 </View>
                 <View style={ styles.bodyContainer }>
                     <View style={styles.menuArea}>
                         <View style={styles.menuRow}>
                             <MenuItem name="Quick pay" style={'topLeftItem'} icon={'qrcode-scan'}></MenuItem>
-                            <MenuItem name="Transações" style={'topMiddleItem'} icon={'credit-card'}></MenuItem>
+                            <MenuItem name="Transações" style={'topMiddleItem'} icon={'shuffle-variant'}></MenuItem>
                             <MenuItem name="Lançamento" style={'topRightItem'} icon={'credit-card'}></MenuItem>
                         </View>
                         <View style={styles.menuRow}>
@@ -54,7 +54,6 @@ export class Menu extends React.Component {
     logoName: {
         color: '#295185',
         alignItems: 'center',
-        fontFamily: 'HelveticaNeue-Medium',
         fontSize: 16,
         marginTop: 10,
         fontWeight: 'bold'
