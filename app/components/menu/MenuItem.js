@@ -6,19 +6,20 @@ import {
     Image,
     TouchableHighlight
 } from 'react-native';
-
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AppText } from '../index';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-const myIcon = (<Icon name="credit-card" size={30} color="#900" />)
-
 export class MenuItem extends React.Component {
+    onPress() {
+
+    }
+
     render() {
         return (
-            <TouchableHighlight style={[styles.menuItem, styles[this.props.style]]}>
+            <TouchableHighlight onPress={this.onPress} underlayColor="#ff0000" style={[styles.menuItem, styles[this.props.style]]}>
                 <View style={styles.menuContainer}>
-                    <Icon style={styles.icon} name={this.props.icon} size={30} color="#900" />
-                    <AppText style={styles.menuItemText}>{this.props.name}</AppText>
+                    <Icon name={this.props.icon} size={36} color="#fff" />
+                    <AppText style={styles.menuItemText}>{this.props.label}</AppText>
                 </View>
             </TouchableHighlight>
         );
@@ -32,17 +33,13 @@ const styles = StyleSheet.create({
 
         backgroundColor: '#295185',
         flex: 1,
-        height: 130,
+        height: 120,
         padding: 10
     },
     menuContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    icon: {
-        color: '#ffffff',
-        fontSize: 36
     },
     menuItemText: {
         marginTop: 8,

@@ -2,8 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import { MenuItem } from '../../../app/components/menu/MenuItem';
-import { AppText } from '../../components';
+import { AppText, MenuItem, Settings } from '../../components';
 
 export class Menu extends React.Component {
     static navigationOptions = {
@@ -13,6 +12,7 @@ export class Menu extends React.Component {
     render() {
         return (
             <View style={styles.mainView}>
+                <Settings />
                 <View style={styles.logoContainer}>
                     <Image style={styles.logo} resizeMode="contain" source={require('../../assets/img/aix-logo.png')}></Image>
                     <AppText style={styles.logoName}>AixMobil</AppText>
@@ -20,14 +20,14 @@ export class Menu extends React.Component {
                 <View style={ styles.bodyContainer }>
                     <View style={styles.menuArea}>
                         <View style={styles.menuRow}>
-                            <MenuItem name="Quick pay" style={'topLeftItem'} icon={'qrcode-scan'}></MenuItem>
-                            <MenuItem name="Transações" style={'topMiddleItem'} icon={'shuffle-variant'}></MenuItem>
-                            <MenuItem name="Lançamento" style={'topRightItem'} icon={'credit-card'}></MenuItem>
+                            <MenuItem label="Quick pay" style={'topLeftItem'} icon={'qrcode-scan'}></MenuItem>
+                            <MenuItem label="Transações" style={'topMiddleItem'} icon={'shuffle-variant'}></MenuItem>
+                            <MenuItem label="Lançamento" style={'topRightItem'} icon={'credit-card'}></MenuItem>
                         </View>
                         <View style={styles.menuRow}>
-                            <MenuItem name="Cobranças" style={'bottomLeftItem'} icon={'account-switch'}></MenuItem>
-                            <MenuItem name="Carteira" style={'bottomMiddleItem'} icon={'credit-card-multiple'}></MenuItem>
-                            <MenuItem name="Configurações" style={'bottomRightItem'} icon={'settings'}></MenuItem>
+                            <MenuItem label="Cobranças" style={'bottomLeftItem'} icon={'account-switch'}></MenuItem>
+                            <MenuItem label="Carteira" style={'bottomMiddleItem'} icon={'credit-card-multiple'}></MenuItem>
+                            <MenuItem label="Configurações" style={'bottomRightItem'} icon={'settings'}></MenuItem>
                         </View>
                     </View>
                 </View>
@@ -56,7 +56,7 @@ export class Menu extends React.Component {
         alignItems: 'center',
         fontSize: 16,
         marginTop: 10,
-        fontWeight: 'bold'
+        // fontWeight: 'bold'
     },
     bodyContainer: {
         flex: 1,
