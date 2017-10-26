@@ -1,13 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import { Home } from './app/screens/home';
-import { NewPayment } from './app/screens/payment/NewPayment';
-import { CreditCards } from './app/screens/wallet/CreditCards';
-import { Menu } from './app/screens/menu/Menu';
+//import { NewPayment } from './app/screens/payment/NewPayment';
+//import { CreditCards } from './app/screens/wallet/CreditCards';
+import { CreditCards, Home, NewPayment } from './app/screens';
 
 const SimpleApp = StackNavigator({
-  Menu: { screen: Menu},
   Home: { screen: Home },
   NewPayment: { screen: NewPayment },
   CreditCards: { screen: CreditCards }

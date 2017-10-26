@@ -10,13 +10,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AppText } from '../index';
 
 export class MenuItem extends React.Component {
-    onPress() {
-
-    }
-
     render() {
         return (
-            <TouchableHighlight onPress={this.onPress} underlayColor="#ff0000" style={[styles.menuItem, styles[this.props.style]]}>
+            <TouchableHighlight onPress={this.props.onPress} underlayColor="#0b284d" style={[styles.menuItem, styles[this.props.style]]}>
                 <View style={styles.menuContainer}>
                     <Icon name={this.props.icon} size={36} color="#fff" />
                     <AppText style={styles.menuItemText}>{this.props.label}</AppText>

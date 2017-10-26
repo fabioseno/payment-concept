@@ -4,12 +4,14 @@ import { StackNavigator } from 'react-navigation';
 
 import { AppText, MenuItem, Settings } from '../../components';
 
-export class Menu extends React.Component {
+export class Home extends React.Component {
     static navigationOptions = {
         header: null
     };
 
     render() {
+        const { navigate } = this.props.navigation;
+
         return (
             <View style={styles.mainView}>
                 <Settings />
@@ -20,14 +22,14 @@ export class Menu extends React.Component {
                 <View style={ styles.bodyContainer }>
                     <View style={styles.menuArea}>
                         <View style={styles.menuRow}>
-                            <MenuItem label="Quick pay" style={'topLeftItem'} icon={'qrcode-scan'}></MenuItem>
-                            <MenuItem label="Transações" style={'topMiddleItem'} icon={'shuffle-variant'}></MenuItem>
-                            <MenuItem label="Lançamento" style={'topRightItem'} icon={'credit-card'}></MenuItem>
+                            <MenuItem label="Quick pay" style={'topLeftItem'} icon={'qrcode-scan'} onPress={() => navigate('NewPayment')}></MenuItem>
+                            <MenuItem label="Transações" style={'topMiddleItem'} icon={'shuffle-variant'} onPress={() => navigate('NewPayment')}></MenuItem>
+                            <MenuItem label="Lançamento" style={'topRightItem'} icon={'credit-card'} onPress={() => navigate('NewPayment')}></MenuItem>
                         </View>
                         <View style={styles.menuRow}>
-                            <MenuItem label="Cobranças" style={'bottomLeftItem'} icon={'account-switch'}></MenuItem>
-                            <MenuItem label="Carteira" style={'bottomMiddleItem'} icon={'credit-card-multiple'}></MenuItem>
-                            <MenuItem label="Configurações" style={'bottomRightItem'} icon={'settings'}></MenuItem>
+                            <MenuItem label="Cobranças" style={'bottomLeftItem'} icon={'account-switch'} onPress={() => navigate('NewPayment')}></MenuItem>
+                            <MenuItem label="Carteira" style={'bottomMiddleItem'} icon={'credit-card-multiple'} onPress={() => navigate('CreditCards')}></MenuItem>
+                            <MenuItem label="Configurações" style={'bottomRightItem'} icon={'settings'} onPress={() => navigate('NewPayment')}></MenuItem>
                         </View>
                     </View>
                 </View>

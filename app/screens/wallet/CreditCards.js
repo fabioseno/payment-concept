@@ -1,7 +1,22 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
+import { Platform,StyleSheet, View, Text, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 export class CreditCards extends React.Component {
+    static navigationOptions = {
+        header: (
+        <View
+            style={{
+                flexDirection: "row",
+                height: 80,
+                marginTop: Platform.OS == "ios" ? 20 : 0 // only for IOS to give StatusBar Space
+                }}
+            >
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text> BACK </Text>
+            </TouchableOpacity>
+            <Text> My Header </Text>
+        </View>
+        )};
 
     listCreditCards() {
         let creditCards = [{

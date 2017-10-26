@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 
 export class NewPayment extends React.Component {
     static navigationOptions = {
-        title: 'Novo pagamento'
+        header: null
     };
 
     render() {
